@@ -25,7 +25,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({
   const { showToast } = useToast();
 
   const stripePromise = loadStripe(
-    "pk_test_51R9gs72KGvEXtMtXXTm7UscmmHYsvk9j3ktaM8vxRb3evNJgG1dpD05YWACweIfcPtpCgOIs4HkpGrTCKE1dZD0p00sLC6iIBg"
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
   );
 
   const [initiateCheckout, { isLoading }] = useInitiateCheckoutMutation();

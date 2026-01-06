@@ -48,7 +48,7 @@ const projects = [
     // ADVANCED & CAPSTONE - Follow same pattern
     { day: 61, title: "Doodle Jump Game", folder: "Day 61", level: "Advanced" },
     // ... add more as you complete them
-    { day: 100, title: "Master Project", folder: "Day 100", level: "Capstone" }
+    { day: 100, title: "Server Survival", folder: "Day 100", level: "Capstone" }
 ];
 
 const repoBaseUrl = "https://github.com/Shubham-cyber-prog/100-days-of-web-development/tree/main/public/";
@@ -177,6 +177,7 @@ function renderProjects(category = 'All', searchQuery = '', preserveScroll = fal
     filteredProjects.forEach(project => {
         const card = document.createElement('div');
         card.className = 'project-card';
+        if (project.day === 100) card.classList.add('special-day-100');
         card.innerHTML = `
             <div class="card-header">
                 <span class="day-number">Day ${project.day}</span>
